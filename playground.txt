@@ -1,0 +1,427 @@
+import UIKit
+var myString = "Hello, World!"
+print(myString)
+/*
+ /*
+ //Tuple
+ let tuple1 = (1, "temie")
+ print(tuple1.0)
+ print(tuple1.1)
+ 
+ //for loop
+ for index in 1 ... 2 {
+ print ("\(index) times 5 is \( index * 5 ) ")
+ }
+ 
+ let names = ["ahmed","amna","Alex"]
+ for name in names{
+ print ("Hello \(name)")
+ }
+ 
+ let numbers = [1, 2, 3]
+ var x = 0
+ for y in numbers{
+ 
+ x += y
+ }
+ print(x)
+ */
+ 
+ //Switch
+ 
+ let approximateCount = 62
+ let countedThings = "moons orbiting Saturn"
+ var naturalCount: String
+ switch approximateCount
+ {
+ case
+ 0
+ :
+ naturalCount = "no"
+ case 1 ..< 5 :
+ naturalCount = "a few "
+ case
+ 5..<12
+ :
+ naturalCount = "several"
+ case 12..<100
+ :
+ naturalCount = "dozens of"
+ case 100..<1000
+ :
+ naturalCount = "hundreds of"
+ default
+ :
+ naturalCount = "many"
+ }
+ print("There are \(naturalCount) \(countedThings)")
+ 
+ 
+ //Switch with Where
+ /*
+ let yetAnotherPoint = (1, 2)
+ switch yetAnotherPoint {
+ case let (x, y) where x == y:
+ print("(\(x), \(y)) is on the line x == y")
+ case let (x, y) where x == -y:
+ print("(\(x), \(y)) is on the line x == -y")
+ case let (x, y):
+ print("(\(x), \(y)) is just some arbitrary point")
+ }
+ */
+ //Switch with binded
+ /*
+ let yetAnotherPoint2 = (0, -1)
+ switch yetAnotherPoint2 {
+ case let (x, y) where x + 1 == -y:
+ print("(\(x), \(y)) is on the line x == -y")
+ case (0, let y):
+ print("(0, \(y)) is not printed !")
+ case let (x, y):
+ print(" (\(x), \(y)) is just some arbitrary point")
+ }
+ */
+ 
+ // Function definition
+ func addTwoInts(numberOne: Int, numberTwo:Int)-> Int {
+ return numberOne + numberTwo
+ }
+ // function call
+ var answer = addTwoInts(numberOne: 1, numberTwo: 2)
+ //var x = addTwoInts ( 4 , numberTwo: 5)
+ print(addTwoInts(numberOne: 3, numberTwo: 3))
+ 
+ func printName(firstName str1: String, lastName str2: String)
+ {
+ //print("\(str1) \(str2)”)
+ 
+ //ትግርኛ ኣብ ጉግል
+ }
+ //printName(firstName:"Ahmed", lastName:"Hammadi")
+ 
+ //other Languages
+ var ጉግል: String = "ትግርኛ"
+ print(ጉግል)
+ 
+ 
+ //Tuples
+ let tuple1 = (1, "Daniel")
+ print(tuple1.1)
+ 
+ var user = (name: "Temie", age: 23)
+ 
+ print("\n")
+ print(user.name)   // prints 501.
+ print("\n")
+ 
+ //Functions
+ func someFunction(_ firstParameterName: Int, secondParameterName: Int)
+ {
+ print ("Here the sum of the two inputs is : \(firstParameterName + secondParameterName)")
+ // In the function body, firstParameterName and secondParameterName
+ //refer to the argument values for the first and second parameters.
+ }
+ //someFunction(1, secondParameterName: 2)
+ 
+ //Function with default value set
+ func myfunc(_ firstParameterName: Int, _ secondParameterName: Int = 12){
+ 
+ print("First` \(firstParameterName) and Second \(secondParameterName)")
+ }
+ myfunc(11, 4)
+ 
+ func printName3( name: String = "Ahmed")
+ {print ("\(name)")}
+ printName3(name: "khalifa")
+ printName3()
+ 
+ 
+ func xxx(_ name: String) -> String{
+ 
+ let myname :String = name
+ return myname
+ }
+ print(" Variable is \(xxx("Temesgen Daniel"))")
+ 
+ 
+ //Swap two numbers
+ 
+ func swapper(_ first: Int, _ second: Int)->(Int,Int){
+ let x: Int = second
+ let y: Int = first
+ return(x, y)
+ }
+ var a=1;  var b=2
+ print("Swapped \(swapper(a, b))")
+ 
+ a = swapper(a, b).0
+ print("Swapped value: \(a)")
+ var x = 5
+ 
+ for i in x..<7{
+ print(i)
+ }
+ 
+ //loops- for in/while/repeat-while
+ 
+ 
+ for chars in "ThisString" {
+ 
+ print(chars, terminator: " ")
+ }
+ print("\n")
+ 
+ //Variadic Function
+ func arithemeticMean(_ numbers: Double...) -> Double
+ {
+ var total : Double = 0
+ for number in numbers {
+ total = total + number
+ 
+ }
+ return total / Double (numbers.count)
+ }
+ 
+ print(arithemeticMean(1.0, 2, 3))
+ 
+ 
+ var someInts = [Int](repeating: 0, count:   2)
+ print(someInts)
+ someInts.append(23)
+ someInts+=[44]
+ print(someInts)
+ for item in someInts {
+ print(item)
+ }
+ 
+ 
+ */
+//Nested Functions
+func operate(with symbol:String) -> (Int, Int) -> Int {
+    func add(num1:Int, num2:Int) -> Int {
+        return num1 + num2
+    }
+    func subtract(num1:Int, num2:Int) -> Int {
+        return num1 - num2
+    }
+    let operation = (symbol == "+") ? add : subtract
+    return operation
+}
+let operation = operate(with: "+")
+let result = operation(2, 3)
+//print(result)
+
+var someSet = Set<Character>()
+var myset = Set<String>()
+someSet.insert("a")
+if(!someSet.isEmpty){
+    //print(someSet.count)
+}
+/*How to insert an element between 5 and 10 ?
+ How to remove 2
+ How to remove the last element
+ */
+
+var numbers = [1,2,4,5,10]
+var temp = [Int]()
+for v in numbers{
+    if v != 5{
+        temp.append(v)
+    }
+    else{
+        temp.append(v)
+        temp.append(0)
+    }
+}
+numbers = temp
+print(numbers)
+
+for b in numbers{
+    if b == 2{
+        //numbers.remove(at: b)
+    }
+}
+//print(numbers)
+
+for (index, item) in numbers.enumerated() {
+    if item == 2{
+        print("Value at index = \(index) is \(item)")
+        numbers.remove(at: index)
+    }
+}
+print(numbers)
+numbers.remove(at: numbers.count-2)
+print(numbers)
+
+
+let ingredients: Set<String> = ["cocoa beans", "sugar", "cocoa butter", "salt"]
+if ingredients.contains ("sugar"){
+    print("No thanks, too sweet.")
+}
+
+
+//Dictionaries
+var someDict:[Int:String] = [1:"One", 2:"Two", 3:"Three"]
+print(someDict[1]!)
+
+var responseMessages: [Int:String] = [200: "OK", 403: "Access forbidden", 404: "File not found", 500: "Internal server error"]
+//print(responseMessages)
+responseMessages[1]="LOL" //append
+//print(responseMessages)
+responseMessages[1]="xxx" //modify
+//print(responseMessages)
+responseMessages.removeValue(forKey: 1)//remove
+//print(responseMessages)
+responseMessages[1]="LOL" //append
+responseMessages.updateValue("Temie", forKey: 1)
+//print(responseMessages)
+responseMessages[1]=nil //remove element
+//print(responseMessages[1])
+
+
+
+func ls(array: [Int]) -> (large: Int, small: Int) {
+   var lar = array[0]
+   var sma = array[0]
+
+   for i in array[1..<array.count] {
+      if i < sma {
+         sma = i
+      } else if i > lar {
+         lar = i
+      }
+   }
+   return (lar, sma)
+}
+
+let num = ls(array: [40,12,-5,78,98])
+print("Largest number is: \(num.large) and smallest number is: \(num.small)")
+
+
+//Enum
+
+enum CompassPoint {
+case north
+case south
+case east
+case west
+}
+var directionToHead = CompassPoint.west
+directionToHead = .east
+switch directionToHead {
+case .north:
+print("Lots of planets have a north")
+case .south:
+print("Watch out for penguins")
+case .east:
+print("Where the sun rises")
+case .west:
+print(("Where the skies are blue"))
+}
+
+
+enum Genders : CaseIterable{ case Male, Female, Others}
+
+var myGender = Genders.Female
+switch myGender{
+
+case .Female:
+print("Girl")
+case .Male:
+print("Boy")
+case .Others:
+print("Unknown")
+}
+
+//Enum Usage to define new variable kind
+enum Satisfaction {
+case unhappy
+case meh
+case happy
+}
+struct Person {
+var name: String
+var satisfaction: Satisfaction
+}
+let person1 = Person(name: "Mohamed", satisfaction: .happy)
+let peroson2 = Person(name: "Rabeb", satisfaction: .meh)
+
+//Enum with raw value
+enum Month: Int {
+   case January = 11 , February, March, April, May, June, July, August,
+      September, October, November, December
+}
+
+let yearMonth = Month.May.rawValue
+print("Value of the Month is: \(yearMonth).")
+
+
+enum Planet: Int {
+case mercury = 1, venus, earth, mars, jupiter, saturn,
+uranus, neptune
+}
+var planet1 = Planet.mars
+print(planet1.rawValue)
+enum CompassPoint1: Int {
+case north = 12
+case south
+case east
+}
+var direction1 = CompassPoint1.south.rawValue
+print(CompassPoint1.south.rawValue)
+
+
+
+//Struct
+
+
+struct markStruct {
+   var mark1: Int
+   var mark2: Int
+   var mark3: Int
+
+   init(_ mark1: Int,_ mark2: Int,_ mark3: Int) {
+      self.mark1 = mark1
+      self.mark2 = mark2
+      self.mark3 = mark3
+   }
+}
+
+//var marks = markStruct(mark1: 98, mark2: 96, mark3:100)
+var marks = markStruct(98, 96, 100)
+
+print(marks.mark1)
+print(marks.mark2)
+print(marks.mark3)
+
+class Counter {
+var count = 0
+func increment() {
+count += 1
+}
+func increment(by amount: Int) {
+count += amount
+}
+func reset() {
+count = 0
+}
+}
+var count1 = Counter()
+count1.increment()
+print(count1.count)
+count1.increment(by: 9)
+print(count1.count)
+
+
+// Value type example
+struct S { var data: Int = -1 }
+var a = S()
+var b = a
+a.data = 42
+print("\(a.data), \(b.data)")
+
+class C { var data: Int = -1 }
+var x = C()
+var y = x
+x.data = 42
+print("\(x.data), \(y.data)")
